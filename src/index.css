@@ -1,0 +1,615 @@
+/* ─────────────────────────────────────────────────────────────────
+   CIST Conference Website — Global Styles
+   Mobile-first | Min-width: 320px | Max-container: 1280px
+   Design: Academic / Institutional (Design PRD v1)
+───────────────────────────────────────────────────────────────── */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties (ShadCN UI + CIST Theme) ────────────── */
+@layer base {
+  :root {
+    /* Background / Foreground */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;        /* #0F172A — Deep Navy */
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover / Dropdown */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary — Deep Navy */
+    --primary: 222 47% 11%;           /* #0F172A */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary — Professional Blue */
+    --secondary: 221 69% 33%;         /* #1E3A8A */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted — Slate tones */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent — Muted Teal */
+    --accent: 174 72% 31%;            /* #0D9488 */
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive — Red 600 */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders / Inputs */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 69% 33%;
+
+    /* Border radius */
+    --radius: 0.5rem;
+  }
+}
+
+/* ── Global Reset + Base Styles ─────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+    min-width: 310px;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #050B12 0%, #0B1623 100%);
+    background-attachment: fixed;
+    color: #FFFFFF;
+  }
+
+  /* ── Typography Hierarchy (Design PRD §2.2) ──────────────────── */
+  h1 {
+    @apply text-h1-mobile md:text-h1-desktop font-bold tracking-tight leading-[1.2];
+    color: #0F172A;
+  }
+  h2 {
+    @apply text-h2-mobile md:text-h2-desktop font-semibold tracking-tight leading-[1.3];
+    color: #0F172A;
+  }
+  h3 {
+    @apply text-h3-mobile md:text-h3-desktop font-semibold;
+    color: #1E3A8A;
+  }
+  h4 {
+    @apply text-lg font-semibold;
+    color: #1E3A8A;
+  }
+  h5, h6 {
+    @apply text-base font-semibold;
+    color: #374151;
+  }
+  p {
+    @apply text-body-base leading-reading;
+    color: #4B5563;
+  }
+
+  /* ── Focus Visible (Accessibility §7) ───────────────────────── */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+
+  /* ── Anchor base ─────────────────────────────────────────────── */
+  a {
+    @apply transition-colors duration-150;
+  }
+
+  /* ── Image / media ───────────────────────────────────────────── */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    content-visibility: auto; /* Performance optimization */
+  }
+}
+
+/* ── Reusable Component Utilities ────────────────────────────────── */
+@layer components {
+
+  /* ─── Layout ─────────────────────────────────────────────────── */
+
+  /* Container wrapper — max 1280px, centered, responsive padding */
+  .site-container {
+    @apply w-full max-w-screen-xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  /* Narrow container (articles, forms) */
+  .site-container-narrow {
+    @apply w-full max-w-3xl mx-auto px-4 md:px-6;
+  }
+
+  /* Section vertical spacing (PRD §4.2) */
+  .section-padding {
+    @apply py-10 md:py-16;
+  }
+
+  /* Thin horizontal rule between sections */
+  .section-divider {
+    @apply border-t my-8 md:my-12;
+    border-color: rgba(255,255,255,0.05);
+  }
+
+  /* ─── Cards (PRD §5.4) ───────────────────────────────────────── */
+
+  .academic-card {
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    background: #0F172A;
+    border: 1px solid rgba(0, 245, 212, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  .academic-card:hover {
+    border-color: rgba(0, 245, 212, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 245, 212, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Flat card — no hover shadow (for admin/form contexts) */
+  .flat-card {
+    border-radius: 0.5rem;
+    background: #0F172A;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* ─── Page Banner ────────────────────────────────────────────── */
+  .page-banner {
+    @apply py-8 md:py-12;
+    background: rgba(11, 22, 35, 0.8);
+    border-bottom: 1px solid rgba(0, 245, 212, 0.1);
+  }
+
+  /* ─── Badges (PRD §6.6) ──────────────────────────────────────── */
+  .badge-base {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-teal {
+    @apply badge-base;
+    background: rgba(0,245,212,0.15);
+    color: #00F5D4;
+    border: 1px solid rgba(0,245,212,0.3);
+  }
+  .badge-upcoming {
+    @apply badge-base;
+    background: rgba(0,245,212,0.12);
+    color: #00F5D4;
+    border: 1px solid rgba(0,245,212,0.25);
+  }
+  .badge-expired {
+    @apply badge-base;
+    background: rgba(255,255,255,0.05);
+    color: #6B7280;
+  }
+  .badge-today {
+    @apply badge-base;
+    background: rgba(251,191,36,0.15);
+    color: #FCD34D;
+  }
+  .badge-info {
+    @apply badge-base;
+    background: rgba(0,230,255,0.1);
+    color: #00E6FF;
+    border: 1px solid rgba(0,230,255,0.2);
+  }
+  .badge-highlight {
+    @apply badge-base;
+    background: var(--ds-gradient-btn);
+    color: #0B1623;
+  }
+
+  /* ─── Buttons (PRD §5.6, §8) ────────────────────────────────── */
+
+  /* Shared base */
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-md
+           transition-all duration-200 focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none
+           select-none;
+  }
+
+  /* Sizes */
+  .btn-sm  { @apply btn-base px-3 py-1.5 text-xs; }
+  .btn-md  { @apply btn-base px-5 py-2.5 text-sm; }
+  .btn-lg  { @apply btn-base px-7 py-3 text-base; }
+
+  /* Primary — Neon Teal Gradient */
+  .btn-primary {
+    @apply btn-md;
+    background: linear-gradient(135deg, #00F5D4 0%, #00C2AA 100%);
+    color: #0B1623;
+    box-shadow: 0 0 15px rgba(0,245,212,0.5);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #00E0C6 0%, #00A896 100%);
+    box-shadow: 0 0 20px rgba(0,245,212,0.7);
+    transform: translateY(-1px);
+  }
+
+  /* Outline — Neon Teal border */
+  .btn-outline {
+    @apply btn-md;
+    background: transparent;
+    border: 1px solid #00F5D4;
+    color: #00F5D4;
+  }
+  .btn-outline:hover {
+    background: rgba(0,245,212,0.08);
+    box-shadow: 0 0 15px rgba(0,245,212,0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Teal — accent CTA */
+  .btn-teal {
+    @apply btn-md;
+    background: linear-gradient(135deg, #00F5D4 0%, #00C2AA 100%);
+    color: #050B12;
+    box-shadow: 0 0 12px rgba(0,245,212,0.45);
+  }
+  .btn-teal:hover {
+    box-shadow: 0 0 20px rgba(0,245,212,0.65);
+    transform: translateY(-1px);
+  }
+
+  /* Ghost — text-only */
+  .btn-ghost {
+    @apply btn-md;
+    color: #9CA3AF;
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.05);
+    color: #D1D5DB;
+  }
+
+  /* Danger */
+  .btn-danger {
+    @apply btn-md bg-red-600 text-white
+           hover:bg-red-700 focus-visible:ring-red-500;
+  }
+
+  /* Mobile full-width modifier */
+  .btn-full-mobile {
+    @apply w-full sm:w-auto;
+  }
+
+  /* ─── Forms (PRD §5.6) ───────────────────────────────────────── */
+
+  .input-field {
+    @apply w-full px-3 py-2.5 border rounded-md text-sm
+           placeholder:text-textMuted
+           focus:outline-none focus:ring-2 focus:ring-neonTeal focus:border-neonTeal
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+    background: #0B1623;
+    border-color: #1F2937;
+    color: #FFFFFF;
+  }
+  .input-field::placeholder { color: #6B7280; }
+  .input-field:focus {
+    box-shadow: 0 0 0 3px rgba(0,245,212,0.12);
+  }
+  .input-field-error {
+    border-color: #EF4444;
+  }
+  .input-field-error:focus {
+    box-shadow: 0 0 0 3px rgba(239,68,68,0.15);
+  }
+
+  /* Form label */
+  .label-text {
+    @apply block text-sm font-medium mb-1.5;
+    color: #D1D5DB;
+  }
+
+  /* Error helper text */
+  .error-text { @apply mt-1 text-xs text-red-400; }
+  /* Helper text */
+  .helper-text { @apply mt-1 text-xs; color: #6B7280; }
+
+  /* ─── Tables (PRD §5.5) ──────────────────────────────────────── */
+
+  /* Horizontal scroll wrapper for mobile */
+  .table-scroll {
+    @apply w-full overflow-x-auto;
+  }
+
+  /* Academic table — dark theme, neon teal headers */
+  .table-academic {
+    @apply w-full border-collapse text-sm;
+  }
+  .table-academic thead {
+    border-bottom: 2px solid rgba(0,245,212,0.2);
+    background: rgba(15,23,42,0.8);
+  }
+  .table-academic thead th {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide whitespace-nowrap;
+    color: #00F5D4;
+  }
+  .table-academic tbody tr {
+    @apply transition-colors duration-150;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .table-academic tbody tr:hover {
+    background: rgba(0,245,212,0.04);
+  }
+  .table-academic tbody tr:last-child {
+    border-bottom: none;
+  }
+  .table-academic tbody td {
+    @apply px-4 py-3 align-top;
+    color: #9CA3AF;
+  }
+
+  /* ─── Text Links ─────────────────────────────────────────────── */
+  .text-link {
+    color: #00F5D4;
+    @apply underline-offset-2 transition-all duration-150;
+  }
+  .text-link:hover {
+    color: #00E0C6;
+    text-shadow: 0 0 8px rgba(0,245,212,0.4);
+    @apply underline;
+  }
+
+  /* ─── Alert / Notification boxes ────────────────────────────── */
+  .alert-base {
+    @apply flex items-start gap-3 px-4 py-3 rounded-md border text-sm;
+  }
+  .alert-info    { @apply alert-base; background: rgba(0,230,255,0.08); border-color: rgba(0,230,255,0.2); color: #00E6FF; }
+  .alert-success { @apply alert-base; background: rgba(0,245,212,0.08); border-color: rgba(0,245,212,0.2); color: #00F5D4; }
+  .alert-warning { @apply alert-base; background: rgba(251,191,36,0.08); border-color: rgba(251,191,36,0.2); color: #FCD34D; }
+  .alert-error   { @apply alert-base; background: rgba(239,68,68,0.08);  border-color: rgba(239,68,68,0.2);  color: #F87171; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DARK AI SaaS DESIGN SYSTEM
+   Theme: Dark Futuristic | Neon Teal / Cyan | Premium Tech
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── CSS Custom Properties: Dark AI Color System ─────────────────── */
+:root {
+  --ds-bg-primary:       #050B12;
+  --ds-bg-secondary:     #0B1623;
+  --ds-bg-card:          #0F172A;
+  --ds-bg-divider:       #111827;
+  --ds-bg-input:         #0B1623;
+
+  --ds-neon-teal:        #00F5D4;
+  --ds-neon-sec:         #00E0C6;
+  --ds-neon-hover:       #00C2AA;
+  --ds-accent-cyan:      #00E6FF;
+
+  --ds-text-primary:     #FFFFFF;
+  --ds-text-sub:         #D1D5DB;
+  --ds-text-body:        #9CA3AF;
+  --ds-text-muted:       #6B7280;
+
+  --ds-border-card:      rgba(0, 245, 212, 0.15);
+  --ds-border-input:     #1F2937;
+  --ds-border-focus:     #00F5D4;
+  --ds-border-sec:       rgba(255, 255, 255, 0.05);
+
+  --ds-shadow-neon:      0 0 20px rgba(0, 245, 212, 0.4);
+  --ds-shadow-neon-lg:   0 0 40px rgba(0, 245, 212, 0.35);
+  --ds-shadow-btn:       0 0 15px rgba(0, 245, 212, 0.6);
+  --ds-shadow-card:      0 8px 20px rgba(0, 0, 0, 0.6);
+  --ds-shadow-card-neon: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 245, 212, 0.12);
+
+  --ds-gradient-bg:          linear-gradient(180deg, #050B12 0%, #0B1623 100%);
+  --ds-gradient-hero-glow:   radial-gradient(circle at center, rgba(0, 245, 212, 0.15), transparent 60%);
+  --ds-gradient-btn:         linear-gradient(135deg, #00F5D4 0%, #00C2AA 100%);
+}
+
+/* ── Glow Utilities ──────────────────────────────────────────────── */
+@layer utilities {
+  .dark-surface    { background: var(--ds-bg-primary); color: var(--ds-text-primary); }
+  .ds-bg-primary   { background-color: var(--ds-bg-primary); }
+  .ds-bg-secondary { background-color: var(--ds-bg-secondary); }
+  .ds-bg-card      { background-color: var(--ds-bg-card); }
+
+  .glow-neon      { box-shadow: var(--ds-shadow-neon); }
+  .glow-neon-lg   { box-shadow: var(--ds-shadow-neon-lg); }
+  .glow-btn       { box-shadow: var(--ds-shadow-btn); }
+  .glow-card      { box-shadow: var(--ds-shadow-card); }
+  .glow-card-neon { box-shadow: var(--ds-shadow-card-neon); }
+
+  .neon-text { color: var(--ds-neon-teal); }
+  .neon-text-shadow {
+    color: var(--ds-neon-teal);
+    text-shadow: 0 0 12px rgba(0, 245, 212, 0.6);
+  }
+
+  .hero-glow { position: relative; }
+  .hero-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ds-gradient-hero-glow);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-glow > * { position: relative; z-index: 1; }
+
+  .neon-border        { border: 1px solid var(--ds-border-card); }
+  .neon-border-active { border-color: var(--ds-neon-teal); }
+}
+
+/* ── Dark Components ─────────────────────────────────────────────── */
+@layer components {
+
+  /* ── Dark Navbar ──────────────────────────────────────── */
+  .dark-navbar {
+    background: rgba(5, 11, 18, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--ds-border-sec);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .dark-nav-link {
+    @apply text-sm font-medium transition-all duration-200;
+    color: var(--ds-text-body);
+  }
+  .dark-nav-link:hover {
+    color: var(--ds-neon-teal);
+    text-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
+  }
+  .dark-nav-link.active { color: var(--ds-neon-teal); }
+
+  /* ── Dark Button Base ─────────────────────────────────── */
+  .dark-btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-lg
+           transition-all duration-200 select-none
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .dark-btn-sm  { @apply dark-btn px-4 py-2 text-xs min-h-[36px]; }
+  .dark-btn-md  { @apply dark-btn px-6 py-2.5 text-sm min-h-[44px]; }
+  .dark-btn-lg  { @apply dark-btn px-8 py-3 text-base min-h-[50px]; }
+
+  /* Primary — Teal gradient */
+  .dark-btn-primary {
+    @apply dark-btn-md;
+    background: var(--ds-gradient-btn);
+    color: #0B1623;
+    box-shadow: var(--ds-shadow-btn);
+  }
+  .dark-btn-primary:hover {
+    background: linear-gradient(135deg, #00E0C6 0%, #00A896 100%);
+    box-shadow: var(--ds-shadow-neon);
+    transform: translateY(-1px);
+  }
+  .dark-btn-primary:active { transform: translateY(0); }
+
+  /* Outline — Neon Teal border */
+  .dark-btn-outline {
+    @apply dark-btn-md;
+    background: transparent;
+    border: 1px solid var(--ds-neon-teal);
+    color: var(--ds-neon-teal);
+  }
+  .dark-btn-outline:hover {
+    background: rgba(0, 245, 212, 0.08);
+    box-shadow: var(--ds-shadow-neon);
+    transform: translateY(-1px);
+  }
+
+  /* Ghost */
+  .dark-btn-ghost {
+    @apply dark-btn-md;
+    background: transparent;
+    color: var(--ds-text-body);
+  }
+  .dark-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--ds-text-sub);
+  }
+
+  /* Cyan variant */
+  .dark-btn-cyan {
+    @apply dark-btn-md;
+    background: linear-gradient(135deg, #00E6FF 0%, #00C2AA 100%);
+    color: #050B12;
+    box-shadow: 0 0 15px rgba(0, 230, 255, 0.5);
+  }
+  .dark-btn-cyan:hover {
+    box-shadow: 0 0 25px rgba(0, 230, 255, 0.7);
+    transform: translateY(-1px);
+  }
+
+  /* Disabled */
+  .dark-btn-disabled {
+    @apply dark-btn-md;
+    background: #1F2937;
+    color: var(--ds-text-muted);
+    cursor: not-allowed;
+  }
+
+  /* ── Dark Cards ───────────────────────────────────────── */
+  .dark-card {
+    background: var(--ds-bg-card);
+    border: 1px solid var(--ds-border-card);
+    border-radius: 1rem;
+    box-shadow: var(--ds-shadow-card);
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  }
+  .dark-card:hover {
+    border-color: rgba(0, 245, 212, 0.35);
+    box-shadow: var(--ds-shadow-card-neon);
+    transform: translateY(-2px);
+  }
+  .dark-card-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--ds-border-sec);
+  }
+  .dark-card-body   { padding: 1.25rem 1.5rem; }
+  .dark-card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--ds-border-sec);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .dark-card-flat {
+    background: var(--ds-bg-card);
+    border: 1px solid var(--ds-border-card);
+    border-radius: 1rem;
+    box-shadow: var(--ds-shadow-card);
+  }
+
+  /* ── Dark Inputs ──────────────────────────────────────── */
+  .dark-input {
+    @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200
+           focus:outline-none;
+    background: var(--ds-bg-input);
+    border: 1px solid var(--ds-border-input);
+    color: var(--ds-text-primary);
+  }
+  .dark-input::placeholder { color: var(--ds-text-muted); }
+  .dark-input:focus {
+    border-color: var(--ds-border-focus);
+    box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.12);
+  }
+  .dark-input:disabled { opacity: 0.5; cursor: not-allowed; }
+  .dark-input-error { border-color: #EF4444; }
+  .dark-input-error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    border-color: #EF4444;
+  }
+
+  /* Dark form helpers */
+  .dark-label  { @apply block text-sm font-medium mb-1.5; color: var(--ds-text-sub); }
+  .dark-helper { @apply mt-1 text-xs; color: var(--ds-text-muted); }
+  .dark-error  { @apply mt-1 text-xs text-red-400; }
+
+  /* ── Dark Badge ───────────────────────────────────────── */
+  .dark-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+    background: rgba(0, 245, 212, 0.12);
+    color: var(--ds-neon-teal);
+    border: 1px solid rgba(0, 245, 212, 0.25);
+  }
+
+  /* ── Section divider (dark) ───────────────────────────── */
+  .dark-divider {
+    border-top: 1px solid var(--ds-border-sec);
+    margin: 2rem 0;
+  }
+}
