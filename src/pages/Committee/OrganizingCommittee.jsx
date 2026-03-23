@@ -14,7 +14,7 @@ function OrganizingCommittee() {
     <main>
       <PageBanner
         title="Organizing Committee"
-        description="The dedicated team responsible for planning and executing CIST 2025."
+        description="The dedicated team responsible for planning and executing CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

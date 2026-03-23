@@ -15,7 +15,7 @@ function FeedbackDay1() {
     <main>
       <PageBanner
         title="Day 1 Feedback"
-        description="Share your experience and feedback for Day 1 of CIST 2025."
+        description="Share your experience and feedback for Day 1 of CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

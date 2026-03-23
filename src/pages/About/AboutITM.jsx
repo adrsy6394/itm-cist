@@ -32,7 +32,7 @@ function AboutITM() {
                 <div className="shrink-0">
                   <div className="w-24 h-24 bg-white border-2 border-slate-100 rounded-2xl shadow-sm p-3 flex items-center justify-center">
                     <img
-                      src="/image copy 2.png"
+                      src="/images_ITM.jpg"
                       alt="ITM University Logo"
                       className="w-full h-full object-contain rounded-lg"
                     />

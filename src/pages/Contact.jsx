@@ -75,7 +75,7 @@ function Contact() {
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
     // Construct mailto: string (no backend)
-    const subject = encodeURIComponent(`[CIST 2025] ${form.subject}`)
+    const subject = encodeURIComponent(`[CIST 2026] ${form.subject}`)
     const body    = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
     )
@@ -87,7 +87,7 @@ function Contact() {
     <main>
       <PageBanner
         title="Contact Us"
-        description="Reach out to the CIST 2025 organizing committee for any queries."
+        description="Reach out to the CIST 2026 organizing committee for any queries."
         breadcrumbs={BREADCRUMBS}
       />
 

@@ -11,8 +11,8 @@ const BREADCRUMBS = [{ label: 'Conclave' }]
 const KEY_TRACKS = [
   { title: "Future of Work",  icon: <Briefcase />,     desc: "Adapting engineering curriculum to meet evolving industry standards." },
   { title: "R&D Ecosystem",   icon: <TrendingUp />,    desc: "Establishing collaborative research centers and joint patenting strategies." },
-  { title: "Tech Transfer",   icon: <MessageSquare />, desc: "Best practices for moving innovations from labs to the commercial market." },
-  { title: "Placement Trends",icon: <Users />,         desc: "Understanding the hiring landscape for 2025 and beyond." },
+  { title: "Tech Transfer",   icon: <MessageSquare />, desc: "Best practices for moving Innovations from labs to the commercial market." },
+  { title: "Placement Trends",icon: <Users />,         desc: "Understanding the hiring landscape for 2026 and beyond." },
 ]
 
 const PANELISTS = [
@@ -29,7 +29,7 @@ function Conclave() {
     <main>
       <PageBanner
         title="Industry-Academia Conclave"
-        description="Bridging gap through dialogue, innovation, and partnership."
+        description="Bridging gap through dialogue, Innovations, and partnership."
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -51,7 +51,7 @@ function Conclave() {
                 />
                 <div className="prose prose-slate max-w-none text-slate-600 space-y-4">
                   <p>
-                    The <strong>Industry-Academia Conclave</strong> at CIST 2025 is designed to foster a collaborative ecosystem where theoretical research meets practical industrial application. The conclave serves as a platform for discussing human capital requirements, R&D partnerships, and technology transfer.
+                    The <strong>Industry-Academia Conclave</strong> at CIST 2026 is designed to foster a collaborative ecosystem where theoretical research meets practical industrial application. The conclave serves as a platform for discussing human capital requirements, R&D partnerships, and technology transfer.
                   </p>
                   <p>
                     Join us for an enlightening afternoon of panel discussions, fire-side chats, and networking sessions featuring top executives from the technology sector and eminent professors from leading research institutions.

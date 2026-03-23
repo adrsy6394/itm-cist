@@ -14,7 +14,7 @@ function TechnicalCommittee() {
     <main>
       <PageBanner
         title="Technical Committee"
-        description="Expert reviewers and technical chairs responsible for the scientific quality of CIST 2025."
+        description="Expert reviewers and technical chairs responsible for the scientific quality of CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

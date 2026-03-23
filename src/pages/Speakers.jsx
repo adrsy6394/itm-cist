@@ -48,7 +48,7 @@ function Speakers() {
     <main>
       <PageBanner
         title="List of Speakers"
-        description="Keynote and invited speakers presenting at CIST 2025."
+        description="Keynote and invited speakers presenting at CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -81,7 +81,7 @@ function Speakers() {
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
               <SectionHeader
                 title="Keynote Speakers"
-                subtitle="Distinguished speakers leading the plenary sessions at CIST 2025."
+                subtitle="Distinguished speakers leading the plenary sessions at CIST 2026."
               />
             </motion.div>
             {SPEAKERS_SHEET_URL && (

@@ -20,7 +20,7 @@ import { fadeUp, fadeIn, fadeLeft, fadeRight, stagger, scaleIn, viewport } from 
 
 /* ─── Static preview data ─── */
 const PREVIEW_DATES = [
-  { id: 1, label: "Abstract Submission Deadline",  date: "TBA", status: "upcoming" },
+  // { id: 1, label: "Abstract Submission Deadline",  date: "TBA", status: "upcoming" },
   { id: 2, label: "Full Paper Submission Deadline", date: "TBA", status: "upcoming" },
   { id: 3, label: "Notification of Acceptance",    date: "TBA", status: "upcoming" },
   { id: 4, label: "Registration Deadline",          date: "TBA", status: "upcoming" },
@@ -32,7 +32,7 @@ const ABOUT_HIGHLIGHTS = [
     icon: <BookOpen size={22} style={{ color: '#00F5D4' }} />,
     title: "Research Topics",
     description:
-      "Covering a broad spectrum of innovation in science, technology, and interdisciplinary research.",
+      "Covering a broad spectrum of Innovations in science, technology, and interdisciplinary research.",
   },
   {
     id: "committee",

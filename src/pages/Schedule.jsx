@@ -88,7 +88,7 @@ function Schedule() {
     <main>
       <PageBanner
         title="Conference Schedule"
-        description="Full programme for all sessions across CIST 2025 conference days."
+        description="Full programme for all sessions across CIST 2026 conference days."
         breadcrumbs={BREADCRUMBS}
       />
 

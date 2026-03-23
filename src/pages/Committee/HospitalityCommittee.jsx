@@ -14,7 +14,7 @@ function HospitalityCommittee() {
     <main>
       <PageBanner
         title="Hospitality Committee"
-        description="Ensuring a warm and welcoming experience for all delegates and participants of CIST 2025."
+        description="Ensuring a warm and welcoming experience for all delegates and participants of CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

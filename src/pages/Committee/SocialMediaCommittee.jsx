@@ -6,15 +6,15 @@ import { SOCIAL_MEDIA_MEMBERS } from '@/data/committees'
 
 const BREADCRUMBS = [
   { label: 'Committee', path: '/committee/convener' },
-  { label: 'Social Media Handling Committee' },
+  { label: 'Media Handling Committee' },
 ]
 
 function SocialMediaCommittee() {
   return (
     <main>
       <PageBanner
-        title="Social Media Handling Committee"
-        description="The team managing digital outreach and social media communications for CIST 2025."
+        title="Media Handling Committee"
+        description="The team managing digital outreach and social media communications for CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

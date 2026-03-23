@@ -14,7 +14,7 @@ function Convener() {
     <main>
       <PageBanner
         title="Convener"
-        description="The conference convener leading CIST 2025."
+        description="The conference convener leading CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -22,7 +22,7 @@ function Convener() {
         <Container>
           <SectionHeader
             title="Convener"
-            subtitle="Conference Convener for CIST 2025."
+            subtitle="Conference Convener for CIST 2026."
             className="mb-8"
           />
 

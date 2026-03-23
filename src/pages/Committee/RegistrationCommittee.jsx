@@ -14,7 +14,7 @@ function RegistrationCommittee() {
     <main>
       <PageBanner
         title="Registration Committee"
-        description="The team managing registrations and participant onboarding for CIST 2025."
+        description="The team managing registrations and participant onboarding for CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

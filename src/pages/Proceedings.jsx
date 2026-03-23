@@ -32,7 +32,7 @@ function Proceedings() {
     },
     {
       year: "2022",
-      title: "Proceedings of the 1st CIST: Innovation Frontiers",
+      title: "Proceedings of the 1st CIST: Innovations Frontiers",
       publisher: "Elsevier Procedia",
       papers: "32 Papers",
       status: "Archived",
@@ -44,7 +44,7 @@ function Proceedings() {
     <main>
       <PageBanner
         title="Conference Proceedings"
-        description="The record of scholarship and innovation from the CIST series."
+        description="The record of scholarship and Innovations from the CIST series."
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -66,16 +66,16 @@ function Proceedings() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2 mb-2">
                   <History size={20} className="text-teal" />
-                  <h3 className="font-bold text-navy uppercase tracking-widest text-sm">CIST 2025 Status</h3>
+                  <h3 className="font-bold text-navy uppercase tracking-widest text-sm">CIST 2026 Status</h3>
                 </div>
                 <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} className="bg-white border-2 border-pro-blue/20 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row gap-6 items-center">
                   <div className="w-20 h-24 bg-pro-blue/10 rounded-lg flex items-center justify-center border border-pro-blue/20 shrink-0">
                     <Book size={40} className="text-pro-blue" />
                   </div>
                   <div className="flex-1 text-center md:text-left">
-                    <h4 className="text-xl font-bold text-navy mb-2">2025 Proceedings Preparation</h4>
+                    <h4 className="text-xl font-bold text-navy mb-2">2026 Proceedings Preparation</h4>
                     <p className="text-sm text-slate-500 mb-4">
-                      Submissions for CIST 2025 are currently being reviewed. Successful papers will be eligible for publication in the upcoming volume of the conference series.
+                      Submissions for CIST 2026 are currently being reviewed. Successful papers will be eligible for publication in the upcoming volume of the conference series.
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                       <Badge variant="info">In Review Process</Badge>
@@ -140,7 +140,7 @@ function Proceedings() {
                       Will the papers be Scopus indexed?
                       <span className="group-open:rotate-180 transition-transform">↓</span>
                     </summary>
-                    <p className="text-xs text-slate-400 mt-2">Yes, for the last three years our proceedings have been indexed in Scopus. We are maintaining the same track for 2025.</p>
+                    <p className="text-xs text-slate-400 mt-2">Yes, for the last three years our proceedings have been indexed in Scopus. We are maintaining the same track for 2026.</p>
                   </details>
                   <details className="group border-b border-white/10 pb-4 cursor-pointer">
                     <summary className="font-bold text-sm flex justify-between items-center group-open:text-teal">

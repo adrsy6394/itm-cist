@@ -6,7 +6,7 @@ import { Trophy, Calendar, MapPin, Users, Download, AlertCircle, Info } from 'lu
 import { motion } from 'framer-motion'
 import { fadeUp, fadeRight, stagger, scaleIn, viewport } from '@/lib/animations'
 
-const BREADCRUMBS = [{ label: 'AISSDT-2025' }]
+const BREADCRUMBS = [{ label: 'AISSDT-2026' }]
 
 const EVENTS = [
   { title: "Paper Presentation", icon: <Download size={20} />, desc: "Present your technical research or case studies to a panel of expert judges." },
@@ -16,21 +16,21 @@ const EVENTS = [
 ]
 
 const SCHEDULE_INFO = [
-  { icon: <Calendar size={18} />, label: "Event Date",      val: "Nov 21, 2025" },
+  { icon: <Calendar size={18} />, label: "Event Date",      val: "Nov 21, 2026" },
   { icon: <MapPin size={18} />,   label: "Venue",           val: "Main Auditorium, ITM" },
   { icon: <Users size={18} />,    label: "Eligibility",     val: "UG/PG Code Students" },
-  { icon: <AlertCircle size={18} />, label: "Reg. Deadline", val: "Oct 30, 2025" },
+  { icon: <AlertCircle size={18} />, label: "Reg. Deadline", val: "Oct 30, 2026" },
 ]
 
 /**
- * AISSDT — AISSDT-2025 Event Page
+ * AISSDT — AISSDT-2026 Event Page
  */
 function AISSDT() {
   return (
     <main>
       <PageBanner
-        title="AISSDT-2025"
-        description="All India Students Symposium on Developing Technologies — 2025."
+        title="AISSDT-2026"
+        description="All India Students Symposium on Developing Technologies — 2026."
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -52,7 +52,7 @@ function AISSDT() {
                 />
                 <div className="prose prose-slate max-w-none text-slate-600 space-y-4">
                   <p>
-                    The <strong>All India Students Symposium on Developing Technologies (AISSDT-2025)</strong> is a national-level event held concurrently with CIST. It aims to provide undergraduate and postgraduate students with a platform to showcase their innovative projects and research work.
+                    The <strong>All India Students Symposium on Developing Technologies (AISSDT-2026)</strong> is a national-level event held concurrently with CIST. It aims to provide undergraduate and postgraduate students with a platform to showcase their innovative projects and research work.
                   </p>
                   <p>
                     AISSDT features a series of competitions, including paper presentations, model exhibitions, and technical workshops, designed to challenge students' creativity and technical prowess.

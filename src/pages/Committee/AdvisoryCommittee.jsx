@@ -14,7 +14,7 @@ function AdvisoryCommittee() {
     <main>
       <PageBanner
         title="Advisory Committee"
-        description="Distinguished experts and advisors who guide the vision and direction of CIST 2025."
+        description="Distinguished experts and advisors who guide the vision and direction of CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 

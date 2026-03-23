@@ -9,6 +9,10 @@
 @tailwind utilities;
 
 /* ── CSS Custom Properties (ShadCN UI + CIST Theme) ────────────── */
+p {
+  text-align: justify;
+}
+
 @layer base {
   :root {
     /* Background / Foreground */

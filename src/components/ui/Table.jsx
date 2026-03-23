@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils'
  *       <Tr><Th>Event</Th><Th>Date</Th><Th>Status</Th></Tr>
  *     </Thead>
  *     <Tbody>
- *       <Tr><Td>Submission Deadline</Td><Td>15 Mar 2025</Td><Td><Badge variant="upcoming">Upcoming</Badge></Td></Tr>
+ *       <Tr><Td>Submission Deadline</Td><Td>15 Mar 2026</Td><Td><Badge variant="upcoming">Upcoming</Badge></Td></Tr>
  *     </Tbody>
  *   </Table>
  * </TableWrapper>

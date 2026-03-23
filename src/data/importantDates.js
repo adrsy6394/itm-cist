@@ -7,12 +7,12 @@
  * status: 'upcoming' | 'expired' | 'today'
  */
 export const IMPORTANT_DATES = [
-  {
-    id: 'd1',
-    label: 'Abstract Submission Deadline',
-    date: 'To be announced',
-    status: 'upcoming',
-  },
+  // {
+  //   id: 'd1',
+  //   label: 'Abstract Submission Deadline',
+  //   date: 'To be announced',
+  //   status: 'upcoming',
+  // },
   {
     id: 'd2',
     label: 'Full Paper Submission Deadline',

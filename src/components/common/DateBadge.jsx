@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils'
  * @example
  * <DateBadge
  *   label="Paper Submission Deadline"
- *   date="15 March 2025"
+ *   date="15 March 2026"
  *   status="upcoming"
  * />
  */

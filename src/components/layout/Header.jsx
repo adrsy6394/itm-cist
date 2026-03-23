@@ -48,7 +48,7 @@ function Header() {
                 aria-hidden="true"
               >
                 <img 
-                  src="/image copy 2.png" 
+                  src="/images_ITM.jpg" 
                   alt="ITM University Logo" 
                   className="w-12 h-12 object-contain rounded-full"
                 />
@@ -72,7 +72,8 @@ function Header() {
                 // Split links into featured and 'more' to prevent overflow
                 const featuredPaths = ['/', '/about', '/committee', '/feedback', '/registration', '/call-for-paper', '/schedule', '/contact']
                 const featuredLinks = NAV_LINKS.filter(l => featuredPaths.includes(l.path))
-                const moreLinks = NAV_LINKS.filter(l => !featuredPaths.includes(l.path))
+                const brochureItem = NAV_LINKS.find(l => l.path === '/brochure')
+                const moreLinks = NAV_LINKS.filter(l => !featuredPaths.includes(l.path) && l.path !== '/brochure')
 
                 return (
                   <>
@@ -154,6 +155,23 @@ function Header() {
                         </div>
                       </div>
                     )}
+
+                    {/* Brochure Item always at the end (highlighted) */}
+                    {brochureItem && (
+                      <div className="relative group ml-1">
+                        <NavLink
+                          to={brochureItem.path}
+                          className={({ isActive }) =>
+                            cn(
+                              'px-2 lg:px-3 py-2 text-[13px] lg:text-sm font-medium rounded-md transition-all duration-200 block whitespace-nowrap',
+                              'text-yellow-400 border border-yellow-400/30 bg-yellow-400/5 hover:bg-yellow-400/10'
+                            )
+                          }
+                        >
+                          {brochureItem.label}
+                        </NavLink>
+                      </div>
+                    )}
                   </>
                 )
               })()}
@@ -213,69 +231,135 @@ function Header() {
         aria-modal="true"
       >
         <nav className="py-4">
-          {NAV_LINKS.map((item) => (
-            <div key={item.path}>
-              {item.children ? (
-                <>
-                  {/* Dropdown group toggle */}
-                  <button
-                    type="button"
-                    onClick={() => toggleDropdown(item.label)}
-                    className="w-full flex items-center justify-between px-6 py-3 text-sm font-medium
-                               text-slate-300 hover:text-white hover:bg-white/5 transition-colors text-left"
-                    aria-expanded={openDropdown === item.label}
-                  >
-                    <span>{item.label}</span>
-                    <ChevronDown
-                      size={15}
-                      className={cn(
-                        'transition-transform duration-150',
-                        openDropdown === item.label && 'rotate-180'
-                      )}
-                      aria-hidden="true"
-                    />
-                  </button>
-                  {openDropdown === item.label && (
-                    <div className="bg-slate-800/50">
-                      {item.children.map((child) => (
-                        <NavLink
-                          key={child.path}
-                          to={child.path}
-                          onClick={() => setMobileOpen(false)}
-                          className={({ isActive }) =>
-                            cn(
-                              'block pl-10 pr-6 py-2.5 text-sm transition-colors',
-                              isActive
-                                ? 'text-[#14B8A8] font-medium'
-                                : 'text-slate-400 hover:text-white'
-                            )
-                          }
+          {(() => {
+            const featuredPaths = ['/', '/about', '/committee', '/feedback', '/registration', '/call-for-paper', '/schedule', '/contact']
+            const featuredLinks = NAV_LINKS.filter(l => featuredPaths.includes(l.path))
+            const brochureItem = NAV_LINKS.find(l => l.path === '/brochure')
+            const moreLinks = NAV_LINKS.filter(l => !featuredPaths.includes(l.path) && l.path !== '/brochure')
+
+            return (
+              <>
+                {featuredLinks.map((item) => (
+                  <div key={item.path}>
+                    {item.children ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => toggleDropdown(item.label)}
+                          className="w-full flex items-center justify-between px-6 py-3 text-sm font-medium
+                                    text-slate-300 hover:text-white hover:bg-white/5 transition-colors text-left"
+                          aria-expanded={openDropdown === item.label}
                         >
-                          {child.label}
-                        </NavLink>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                  <NavLink
-                    to={item.path}
-                    onClick={() => setMobileOpen(false)}
-                    className={({ isActive }) =>
-                      cn(
-                        'block px-6 py-3 text-sm font-medium transition-all duration-200',
-                        isActive
-                          ? 'font-semibold'
-                          : 'text-slate-300 hover:bg-white/5'
-                      )
-                    }
-                    style={({ isActive }) => ({ color: isActive ? '#00F5D4' : undefined })}
-                  >
-                    {item.label}
-                  </NavLink>
-              )}
-            </div>
-          ))}
+                          <span>{item.label}</span>
+                          <ChevronDown
+                            size={15}
+                            className={cn(
+                              'transition-transform duration-150',
+                              openDropdown === item.label && 'rotate-180'
+                            )}
+                            aria-hidden="true"
+                          />
+                        </button>
+                        {openDropdown === item.label && (
+                          <div className="bg-slate-800/50">
+                            {item.children.map((child) => (
+                              <NavLink
+                                key={child.path}
+                                to={child.path}
+                                onClick={() => setMobileOpen(false)}
+                                className={({ isActive }) =>
+                                  cn(
+                                    'block pl-10 pr-6 py-2.5 text-sm transition-colors',
+                                    isActive
+                                      ? 'text-[#14B8A8] font-medium'
+                                      : 'text-slate-400 hover:text-white'
+                                  )
+                                }
+                              >
+                                {child.label}
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <NavLink
+                        to={item.path}
+                        onClick={() => setMobileOpen(false)}
+                        className={({ isActive }) =>
+                          cn(
+                            'block px-6 py-3 text-sm font-medium transition-all duration-200',
+                            isActive
+                                ? 'font-semibold text-neonTeal bg-neonTeal/5'
+                                : 'text-slate-300 hover:bg-white/5'
+                          )
+                        }
+                      >
+                        {item.label}
+                      </NavLink>
+                    )}
+                  </div>
+                ))}
+
+                {/* Mobile 'More' Dropdown */}
+                {moreLinks.length > 0 && (
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => toggleDropdown('MoreMobile')}
+                      className="w-full flex items-center justify-between px-6 py-3 text-sm font-medium
+                                 text-slate-300 hover:text-white hover:bg-white/5 transition-colors text-left"
+                      aria-expanded={openDropdown === 'MoreMobile'}
+                    >
+                      <span>More</span>
+                      <ChevronDown
+                        size={15}
+                        className={cn(
+                          'transition-transform duration-150',
+                          openDropdown === 'MoreMobile' && 'rotate-180'
+                        )}
+                        aria-hidden="true"
+                      />
+                    </button>
+                    {openDropdown === 'MoreMobile' && (
+                      <div className="bg-slate-800/50">
+                        {moreLinks.map((item) => (
+                          <NavLink
+                            key={item.path}
+                            to={item.path}
+                            onClick={() => setMobileOpen(false)}
+                            className={({ isActive }) =>
+                              cn(
+                                'block pl-10 pr-6 py-2.5 text-sm transition-colors',
+                                isActive
+                                  ? 'text-[#14B8A8] font-medium'
+                                  : 'text-slate-400 hover:text-white'
+                              )
+                            }
+                          >
+                            {item.label}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Highlighted Brochure at the end of mobile menu */}
+                {brochureItem && (
+                  <div key={brochureItem.path} className="px-6 py-2">
+                    <NavLink
+                      to={brochureItem.path}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-4 py-2 text-sm font-bold text-yellow-400 border border-yellow-400/30 bg-yellow-400/5 rounded-lg text-center"
+                    >
+                      {brochureItem.label}
+                    </NavLink>
+                  </div>
+                )}
+              </>
+            )
+          })()}
 
           {/* Register CTA inside drawer on mobile */}
           <div className="px-6 pt-3 pb-5 border-t mt-2" style={{ borderColor: 'rgba(0,245,212,0.1)' }}>

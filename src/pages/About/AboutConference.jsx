@@ -16,7 +16,7 @@ function AboutConference() {
     <main>
       <PageBanner
         title="About the Conference"
-        description="Innovation in Science & Technology — CIST 2025."
+        description="Innovations in Science & Technology — CIST 2026."
         breadcrumbs={BREADCRUMBS}
       />
 
@@ -28,7 +28,7 @@ function AboutConference() {
               {/* Introduction */}
               <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
                 <SectionHeader
-                  title="CIST 2025 Overview"
+                  title="CIST 2026 Overview"
                   subtitle="A premier platform for researchers, academics, and industry professionals."
                   align="left"
                   className="mb-6"
@@ -37,7 +37,7 @@ function AboutConference() {
                   <p>
                     The{" "}
                     <strong>
-                      Conference on Innovation in Science &amp; Technology (CIST
+                      Conference on Innovations in Science &amp; Technology (CIST
                       2026)
                     </strong>{" "}
                     will serve as a dynamic platform where pioneering ideas
@@ -46,7 +46,7 @@ function AboutConference() {
                     breakthroughs, this event will bring together leading
                     researchers, scholars, and industry experts from all over
                     India. The overarching theme revolves around harnessing
-                    innovation to address pressing challenges across various
+                    Innovations to address pressing challenges across various
                     domains, from healthcare and biotechnology to artificial
                     intelligence and renewable energy.
                   </p>
@@ -94,7 +94,7 @@ function AboutConference() {
                     },
                     {
                       icon: <Target size={20} />,
-                      title: "Innovation Tracking",
+                      title: "Innovations Tracking",
                       desc: "Identify and discuss emerging technologies and their impact on society.",
                     },
                     {

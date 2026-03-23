@@ -25,27 +25,27 @@ function PersonCard({ name, designation, affiliation, imageSrc, role, className,
     <div
       className={cn(
         'bg-white border border-slate-200 rounded-lg shadow-card',
-        'transition-shadow duration-200 hover:shadow-card-hover',
+        'transition-all duration-300 hover:shadow-card-hover group',
         'p-5 flex flex-col items-center text-center',
         className,
       )}
       {...props}
     >
       {/* Avatar */}
-      <div className="mb-4 flex-shrink-0">
+      <div className="mb-4 flex-shrink-0 w-28 h-28 rounded-full overflow-hidden border-2 border-slate-100 shadow-sm bg-slate-50">
         {imageSrc ? (
           <img
             src={imageSrc}
             alt={`Photo of ${name}`}
-            className="w-20 h-20 rounded-full object-cover border-2 border-slate-100"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
           />
         ) : (
           <div
-            className="w-20 h-20 rounded-full bg-slate-100 border-2 border-slate-200 flex items-center justify-center"
+            className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
             aria-hidden="true"
           >
-            <User size={32} className="text-slate-400" />
+            <User size={40} className="text-slate-400/60" />
           </div>
         )}
       </div>

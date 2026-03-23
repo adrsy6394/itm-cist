@@ -1,16 +1,16 @@
 /**
  * siteData.js — Static conference metadata
- * Update this file with actual CIST 2025 conference details.
+ * Update this file with actual CIST 2026 conference details.
  */
 
 export const SITE_META = {
-  conferenceFullName: 'Conference on Innovation in Science & Technology',
+  conferenceFullName: 'Conference on Innovations in Science & Technology',
   conferenceShortName: 'CIST 2026',
   organizedBy: 'Institute of Technology & Management',
   supportedBy: 'Institution of Engineers (India) — IEI',
   year: '2026',
-  date: '23rd to 25th April, 2026', // e.g. "March 15–16, 2025"   
-  venue: 'Institute of Technology & Management, GIDA, Gorakhpur-273001 (U.P)',
+  date: '23rd to 25th April, 2026', // e.g. "March 15–16, 2026"   
+  venue: 'Institute of Technology & Management, GIDA, Gorakhpur-273209 (U.P)',
   email: 'itm@itm.ac.in', // contact email
   phone: '+91 9876543210', // contact phone
 }
@@ -25,22 +25,22 @@ export const NAV_LINKS = [
     label: 'About',
     path: '/about',
     children: [
-      { label: 'About Conference', path: '/about/conference' },
-      { label: 'About IEI',        path: '/about/iei' },
       { label: 'About ITM',        path: '/about/itm' },
+      { label: 'About IEI',        path: '/about/iei' },
+      { label: 'About Conference', path: '/about/conference' },
     ],
   },
   {
     label: 'Committee',
     path: '/committee',
     children: [
+      { label: 'Advisory Committee',             path: '/committee/advisory' },
       { label: 'Convener',                      path: '/committee/convener' },
       { label: 'Organizing Committee',           path: '/committee/organizing' },
       { label: 'Technical Committee',            path: '/committee/technical' },
-      { label: 'Advisory Committee',             path: '/committee/advisory' },
-      { label: 'Social Media Handling Committee', path: '/committee/social-media' },
-      { label: 'Hospitality Committee',          path: '/committee/hospitality' },
+      { label: 'Media Handling Committee', path: '/committee/social-media' },
       { label: 'Registration Committee',         path: '/committee/registration-committee' },
+      { label: 'Hospitality Committee',          path: '/committee/hospitality' },
     ],
   },
   {
@@ -67,7 +67,7 @@ export const NAV_LINKS = [
   { label: 'List of Speakers',    path: '/speakers' },
   { label: 'Schedule',            path: '/schedule' },
   { label: 'Proceedings',         path: '/proceedings' },
-  { label: 'AISSDT-2025',         path: '/aissdt-2025' },
+  { label: 'AISSDT-2026',         path: '/aissdt-2026' },
   { label: 'Conclave',            path: '/conclave' },
   { label: 'Brochure',            path: '/brochure' },
   { label: 'Contact',             path: '/contact' },
@@ -80,10 +80,11 @@ export const NAV_LINKS = [
  */
 export const PRIMARY_NAV = [
   { label: 'Home',             path: '/' },
-  { label: 'About',            path: '/about/conference' },
-  { label: 'Committee',        path: '/committee/convener' },
+  { label: 'About',            path: '/about/itm' },
+  { label: 'Committee',        path: '/committee/advisory' },
   { label: 'Registration',     path: '/registration' },
   { label: 'Call for Paper',   path: '/call-for-paper' },
   { label: 'Schedule',         path: '/schedule' },
+  { label: 'Brochure',         path: '/brochure' },
   { label: 'Contact',          path: '/contact' },
 ]

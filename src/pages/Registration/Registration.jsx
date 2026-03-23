@@ -65,7 +65,7 @@ function Registration() {
     <main>
       <PageBanner
         title="Registration"
-        description="Register for CIST 2025 — select your participant category to access the form."
+        description="Register for CIST 2026 — select your participant category to access the form."
         breadcrumbs={BREADCRUMBS}
       />
 
