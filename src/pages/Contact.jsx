@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { fadeUp, fadeLeft, fadeRight, viewport } from '@/lib/animations'
 import PageBanner from '@/components/layout/PageBanner'
@@ -40,49 +39,14 @@ const CONTACT_INFO = [
   },
 ]
 
-const INITIAL_FORM = { name: '', email: '', subject: '', message: '' }
-
 /**
  * Contact — Design PRD §6.7
  *
  * Layout (mobile-first):
- *   Mobile:  stacked — form on top, contact info below
- *   Desktop: 3-col form + 2-col sidebar (contact info + map placeholder)
+ *   Mobile:  stacked — contact persons on top, sidebar below
+ *   Desktop: 3-col contact persons + 2-col sidebar (contact info + map)
  */
 function Contact() {
-  const [form, setForm]       = useState(INITIAL_FORM)
-  const [errors, setErrors]   = useState({})
-  const [submitted, setSubmitted] = useState(false)
-
-  const validate = () => {
-    const errs = {}
-    if (!form.name.trim())    errs.name    = 'Name is required'
-    if (!form.email.trim())   errs.email   = 'Email is required'
-    else if (!/\S+@\S+\.\S+/.test(form.email)) errs.email = 'Enter a valid email'
-    if (!form.subject.trim()) errs.subject = 'Subject is required'
-    if (!form.message.trim()) errs.message = 'Message is required'
-    return errs
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setForm((f) => ({ ...f, [name]: value }))
-    if (errors[name]) setErrors((errs) => ({ ...errs, [name]: undefined }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const errs = validate()
-    if (Object.keys(errs).length) { setErrors(errs); return }
-    // Construct mailto: string (no backend)
-    const subject = encodeURIComponent(`[CIST 2026] ${form.subject}`)
-    const body    = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-    )
-    window.location.href = `mailto:${SITE_META.email}?subject=${subject}&body=${body}`
-    setSubmitted(true)
-  }
-
   return (
     <main>
       <PageBanner
@@ -97,167 +61,29 @@ function Contact() {
           {/* ── Desktop: 3+2 col grid / Mobile: stacked ── */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
 
-            {/* ═════════════════════ LEFT: Contact Form (3/5) ═════════════════════ */}
+            {/* ═════════════════════ LEFT: Contact Persons (3/5) ═════════════════════ */}
             <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={viewport} className="lg:col-span-3">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-1 h-7 bg-teal rounded-full" />
-                <h2 className="text-xl font-semibold text-navy">Send Us a Message</h2>
+                <h2 className="text-xl font-semibold text-navy">Contact Persons</h2>
               </div>
-
-              {submitted ? (
-                /* Success state */
-                <div className="flex flex-col items-center text-center py-14 gap-3">
-                  <CheckCircle2 size={40} className="text-green-500" />
-                  <h3 className="text-base font-semibold text-navy">Message sent!</h3>
-                  <p className="text-sm text-slate-500 max-w-xs">
-                    Your default email client has been opened with the message pre-filled.
-                    We'll respond within 1–2 business days.
-                  </p>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => { setForm(INITIAL_FORM); setSubmitted(false) }}
-                    className="mt-2"
-                  >
-                    Send another message
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} noValidate className="space-y-5">
-
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">
-                      Full Name <span className="text-red-500" aria-hidden>*</span>
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Dr. Anita Sharma"
-                      className={[
-                        'w-full rounded-md border px-3.5 py-2.5 text-sm text-slate-800',
-                        'placeholder-slate-400 bg-white outline-none',
-                        'transition-colors duration-150',
-                        'focus:ring-2 focus:ring-pro-blue/30 focus:border-pro-blue',
-                        errors.name
-                          ? 'border-red-400 focus:ring-red-200'
-                          : 'border-slate-300',
-                      ].join(' ')}
-                    />
-                    {errors.name && (
-                      <p className="flex items-center gap-1 mt-1 text-xs text-red-600">
-                        <AlertCircle size={11} /> {errors.name}
-                      </p>
-                    )}
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { name: 'Mr. Abhishek Yadav', phone: '9532043310' },
+                  { name: 'Mr. Abhraneel Sengupta', phone: '8299637860' },
+                ].map((person, idx) => (
+                  <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 className="text-navy font-semibold text-lg mb-2">{person.name}</h3>
+                    <div className="flex items-center gap-2 text-teal">
+                      <Phone size={16} />
+                      <a href={`tel:${person.phone}`} className="text-slate-600 hover:text-pro-blue font-medium transition-colors">
+                        +91 {person.phone}
+                      </a>
+                    </div>
                   </div>
-
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
-                      Email Address <span className="text-red-500" aria-hidden>*</span>
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="anita@example.edu"
-                      className={[
-                        'w-full rounded-md border px-3.5 py-2.5 text-sm text-slate-800',
-                        'placeholder-slate-400 bg-white outline-none',
-                        'transition-colors duration-150',
-                        'focus:ring-2 focus:ring-pro-blue/30 focus:border-pro-blue',
-                        errors.email
-                          ? 'border-red-400 focus:ring-red-200'
-                          : 'border-slate-300',
-                      ].join(' ')}
-                    />
-                    {errors.email && (
-                      <p className="flex items-center gap-1 mt-1 text-xs text-red-600">
-                        <AlertCircle size={11} /> {errors.email}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Subject */}
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-1.5">
-                      Subject <span className="text-red-500" aria-hidden>*</span>
-                    </label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      value={form.subject}
-                      onChange={handleChange}
-                      placeholder="Query about paper submission"
-                      className={[
-                        'w-full rounded-md border px-3.5 py-2.5 text-sm text-slate-800',
-                        'placeholder-slate-400 bg-white outline-none',
-                        'transition-colors duration-150',
-                        'focus:ring-2 focus:ring-pro-blue/30 focus:border-pro-blue',
-                        errors.subject
-                          ? 'border-red-400 focus:ring-red-200'
-                          : 'border-slate-300',
-                      ].join(' ')}
-                    />
-                    {errors.subject && (
-                      <p className="flex items-center gap-1 mt-1 text-xs text-red-600">
-                        <AlertCircle size={11} /> {errors.subject}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
-                      Message <span className="text-red-500" aria-hidden>*</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Write your query here…"
-                      className={[
-                        'w-full rounded-md border px-3.5 py-2.5 text-sm text-slate-800',
-                        'placeholder-slate-400 bg-white outline-none resize-y',
-                        'transition-colors duration-150',
-                        'focus:ring-2 focus:ring-pro-blue/30 focus:border-pro-blue',
-                        errors.message
-                          ? 'border-red-400 focus:ring-red-200'
-                          : 'border-slate-300',
-                      ].join(' ')}
-                    />
-                    {errors.message && (
-                      <p className="flex items-center gap-1 mt-1 text-xs text-red-600">
-                        <AlertCircle size={11} /> {errors.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Submit */}
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    fullWidth
-                    className="mt-1"
-                  >
-                    Send Message
-                    <Send size={15} />
-                  </Button>
-
-                  <p className="text-xs text-slate-400 text-center">
-                    This will open your default email client to send the message.
-                  </p>
-                </form>
-              )}
+                ))}
+              </div>
             </motion.div>
 
             {/* ═════════════════════ RIGHT: Sidebar (2/5) ═════════════════════ */}
@@ -292,13 +118,30 @@ function Contact() {
                 </ul>
               </div>
 
-              {/* Map placeholder */}
-              <div className="w-full h-48 bg-slate-100 rounded-xl border border-slate-200 overflow-hidden flex flex-col items-center justify-center gap-2 text-slate-400">
-                <MapPin size={28} className="text-slate-300" />
-                <p className="text-xs font-medium">Map — ITM College, GIDA, Gorakhpur</p>
-                
-
-                <p className="text-[10px]">Embed Google Map here</p>
+              {/* Map embed */}
+              <div className="w-full h-64 bg-slate-100 rounded-xl border border-slate-200 overflow-hidden group relative">
+                <iframe
+                  title="ITM GIDA Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.4862211933085!2d83.33153577536967!3d26.744855476747206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991448b26099df3%3A0x1b72e50588a4c87c!2sInstitute%20of%20Technology%20%26%20Management!5e0!3m2!1sen!2sin!4v1711186000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale group-hover:grayscale-0 transition-all duration-500"
+                />
+                <div className="absolute top-2 right-2">
+                  <a 
+                    href="https://shorturl.at/jV3hJ" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-white/90 backdrop-blur-sm text-[10px] font-medium text-navy px-2 py-1.5 rounded shadow-sm hover:bg-white transition-colors flex items-center gap-1.5 border border-slate-200"
+                  >
+                    <MapPin size={12} className="text-teal" />
+                    Open in Google Maps
+                  </a>
+                </div>
               </div>
 
             </motion.aside>

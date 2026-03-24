@@ -14,7 +14,7 @@ export const SITE_META = {
   date:                '23rd to 25th April, 2026',
   venue:               'Institute of Technology & Management, GIDA, Gorakhpur-273209 (U.P)',
   email:               'itm@itm.ac.in',
-  phone:               '+91 9876543210',
+  phone:               '+91 8299637860',
 }
 
 // ── Hero Content ───────────────────────────────────────────────────────────────
