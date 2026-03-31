@@ -11,7 +11,7 @@ export const SITE_META = {
   organizedBy:         'Institute of Technology & Management',
   supportedBy:         'Institution of Engineers (India) — IEI',
   year:                '2026',
-  date:                '23rd to 25th April, 2026',
+  date:                '30th April,1-2 May 2026',
   venue:               'Institute of Technology & Management, GIDA, Gorakhpur-273209 (U.P)',
   email:               'itm@itm.ac.in',
   phone:               '+91 8299637860',

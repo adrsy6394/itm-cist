@@ -21,7 +21,7 @@ export const ORGANIZING_MEMBERS = [
   { id: 'oc4',  name: 'Dr. Birendra Kr. Srivastava',                 imageSrc: '' },
   { id: 'oc5',  name: 'Dr. Manoj Kr. Mishra',           imageSrc: '/committee/Manoj Sir.jpeg' },
   { id: 'oc6',  name: 'Dr. Krishna Kumar',             imageSrc: '' },
-  { id: 'oc7',  name: 'Ms. Shalini Singh',                imageSrc: '' },
+  { id: 'oc7',  name: 'Ms. Shalini Singh',                imageSrc: '/committee/shalini singh.jpeg' },
   { id: 'oc8',  name: 'Dr. A. K. Sharma',            imageSrc: '' },
   { id: 'oc9',  name: 'Ms. Shweta Singh',                 imageSrc: '' },
   { id: 'oc10', name: 'Dr. R. K. Singh',           imageSrc: '/committee/R.K Singh.jpeg' },
@@ -94,8 +94,8 @@ export const ADVISORY_MEMBERS = [
 // ── Media Handling Committee (3 members) ────────────────────────────────
 export const SOCIAL_MEDIA_MEMBERS = [
   { id: 'sm1', name: 'Mr. Pradeep Kumar Chaudhary',                         imageSrc: '/committee/Pradeep Kumar Chaudhari.jpeg' },
-  { id: 'sm2', name: 'Mr. Shivkumar Yadav',                                 imageSrc: '' },
-  { id: 'sm3', name: 'Mr. Virendra Vikram Singh',                           imageSrc: '' },
+  { id: 'sm2', name: 'Mr. Shivkumar Yadav',                                 imageSrc: '/committee/shiv kumar yadav.jpeg' },
+  { id: 'sm3', name: 'Mr. Virendra Vikram Singh',                           imageSrc: '/committee/virendra vikram.jpeg' },
 ]
 
 // ── Hospitality Committee (6 members) ─────────────────────────────────────────

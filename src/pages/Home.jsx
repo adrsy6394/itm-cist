@@ -20,10 +20,9 @@ import { fadeUp, fadeIn, fadeLeft, fadeRight, stagger, scaleIn, viewport } from 
 
 /* ─── Static preview data ─── */
 const PREVIEW_DATES = [
-  // { id: 1, label: "Abstract Submission Deadline",  date: "TBA", status: "upcoming" },
-  { id: 2, label: "Full Paper Submission Deadline", date: "TBA", status: "upcoming" },
-  { id: 3, label: "Notification of Acceptance",    date: "TBA", status: "upcoming" },
-  { id: 4, label: "Registration Deadline",          date: "TBA", status: "upcoming" },
+  { id: 1, label: "Submission Deadline", date: "12 April 2026", status: "upcoming" },
+  { id: 2, label: "Acceptance Notification",    date: "18 April 2026", status: "upcoming" },
+  { id: 3, label: "Registration",          date: "24 – 28 April 2026", status: "upcoming" },
 ];
 
 const ABOUT_HIGHLIGHTS = [

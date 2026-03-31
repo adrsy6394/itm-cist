@@ -45,18 +45,14 @@ function RegistrationFee() {
                   <thead>
                     <tr className="bg-navy text-white">
                       <th className="p-4 font-bold border-b border-white/10 first:rounded-tl-2xl">Category</th>
-                      <th className="p-4 font-bold border-b border-white/10 text-center">Early Bird</th>
-                      <th className="p-4 font-bold border-b border-white/10 text-center">Regular</th>
-                      <th className="p-4 font-bold border-b border-white/10 text-center last:rounded-tr-2xl">On Spot</th>
+                      <th className="p-4 font-bold border-b border-white/10 text-center last:rounded-tr-2xl">Fee</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
                     {REGISTRATION_FEE.map((row, i) => (
                       <tr key={i} className="hover:bg-slate-50 transition-colors">
                         <td className="p-4 font-bold text-navy">{row.category}</td>
-                        <td className="p-4 text-center font-bold text-teal">{row.earlyBird}</td>
-                        <td className="p-4 text-center font-bold text-pro-blue">{row.regular}</td>
-                        <td className="p-4 text-center text-slate-400">{row.onSpot}</td>
+                        <td className="p-4 text-center font-bold text-teal">{row.fee}</td>
                       </tr>
                     ))}
                   </tbody>

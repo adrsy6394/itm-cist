@@ -187,18 +187,14 @@ function ImportantDates() {
               <thead>
                 <tr className="bg-slate-50 border-b-2 border-slate-200">
                   <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wide min-w-[220px]">Category</th>
-                  <th scope="col" className="px-4 py-3 text-center text-xs font-semibold text-teal uppercase tracking-wide">Early Bird</th>
-                  <th scope="col" className="px-4 py-3 text-center text-xs font-semibold text-pro-blue uppercase tracking-wide">Regular</th>
-                  <th scope="col" className="px-4 py-3 text-center text-xs font-semibold text-slate-500 uppercase tracking-wide">On Spot</th>
+                  <th scope="col" className="px-4 py-3 text-center text-xs font-semibold text-teal uppercase tracking-wide">Fee</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {REGISTRATION_FEE.map((row) => (
                   <tr key={row.id} className="bg-white hover:bg-slate-50/60 transition-colors">
                     <td className="px-4 py-3.5 text-sm font-medium text-navy">{row.category}</td>
-                    <td className="px-4 py-3.5 text-sm text-center font-semibold text-teal">{row.earlyBird}</td>
-                    <td className="px-4 py-3.5 text-sm text-center font-semibold text-pro-blue">{row.regular}</td>
-                    <td className="px-4 py-3.5 text-sm text-center text-slate-600">{row.onSpot}</td>
+                    <td className="px-4 py-3.5 text-sm text-center font-semibold text-teal">{row.fee}</td>
                   </tr>
                 ))}
               </tbody>
