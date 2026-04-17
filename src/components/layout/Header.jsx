@@ -78,18 +78,20 @@ function Header() {
                 return (
                   <>
                     {featuredLinks.map((item) => (
-                      <div key={item.path} className="relative group">
+                      <div key={item.path} className="relative group h-full flex items-center">
                         {item.children ? (
                           <>
                             <button
                               type="button"
-                              className="flex items-center gap-1 px-2 lg:px-3 py-2 text-[13px] lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-md transition-colors duration-150"
+                              className="flex items-center gap-1 px-2 lg:px-3 py-5 text-[13px] lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-md transition-colors duration-150"
                             >
                               {item.label}
                               <ChevronDown size={12} className="transition-transform duration-200 group-hover:rotate-180" />
                             </button>
-                            <div className="absolute top-full left-0 pt-2 w-56 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                              <div className="rounded-lg shadow-xl py-2 overflow-hidden" style={{ background: '#0F172A', border: '1px solid rgba(0,245,212,0.15)' }}>
+                            <div className="absolute top-full left-0 mt-0 pt-2 w-56 opacity-0 translate-y-2 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
+                              <div className="rounded-lg shadow-xl py-2 overflow-hidden relative" style={{ background: '#0F172A', border: '1px solid rgba(0,245,212,0.15)' }}>
+                                {/* Invisible bridge to prevent mouseleave */}
+                                <div className="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
                                 {item.children.map((child) => (
                                   <NavLink
                                     key={child.path}
@@ -113,7 +115,7 @@ function Header() {
                             to={item.path}
                             className={({ isActive }) =>
                               cn(
-                                'px-2 lg:px-3 py-2 text-[13px] lg:text-sm font-medium rounded-md transition-all duration-200 block whitespace-nowrap',
+                                'px-2 lg:px-3 py-5 text-[13px] lg:text-sm font-medium rounded-md transition-all duration-200 block whitespace-nowrap',
                                 isActive ? 'text-neonTeal bg-neonTeal/10 font-semibold' : 'text-slate-300 hover:text-neonTeal hover:bg-white/5'
                               )
                             }
@@ -126,16 +128,18 @@ function Header() {
 
                     {/* 'More' Dropdown for standalone pages */}
                     {moreLinks.length > 0 && (
-                      <div className="relative group">
+                      <div className="relative group h-full flex items-center">
                         <button
                           type="button"
-                          className="flex items-center gap-1 px-2 lg:px-3 py-2 text-[13px] lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-md transition-colors duration-150"
+                          className="flex items-center gap-1 px-2 lg:px-3 py-5 text-[13px] lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-md transition-colors duration-150"
                         >
                           More
                           <ChevronDown size={12} className="transition-transform duration-200 group-hover:rotate-180" />
                         </button>
-                        <div className="absolute top-full right-0 pt-2 w-64 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
-                          <div className="rounded-lg shadow-xl py-2 overflow-hidden max-h-[70vh] overflow-y-auto" style={{ background: '#0F172A', border: '1px solid rgba(0,245,212,0.15)' }}>
+                        <div className="absolute top-full right-0 mt-0 pt-2 w-64 opacity-0 translate-y-2 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 z-50">
+                          <div className="rounded-lg shadow-xl py-2 overflow-hidden max-h-[70vh] overflow-y-auto relative" style={{ background: '#0F172A', border: '1px solid rgba(0,245,212,0.15)' }}>
+                            {/* Invisible bridge to prevent mouseleave */}
+                            <div className="absolute -top-4 left-0 w-full h-4 bg-transparent w-full"></div>
                             {moreLinks.map((item) => (
                               <NavLink
                                 key={item.path}
@@ -158,12 +162,12 @@ function Header() {
 
                     {/* Brochure Item always at the end (highlighted) */}
                     {brochureItem && (
-                      <div className="relative group ml-1">
+                      <div className="relative group ml-1 h-full flex items-center">
                         <NavLink
                           to={brochureItem.path}
                           className={({ isActive }) =>
                             cn(
-                              'px-2 lg:px-3 py-2 text-[13px] lg:text-sm font-medium rounded-md transition-all duration-200 block whitespace-nowrap',
+                              'px-2 lg:px-3 py-5 text-[13px] lg:text-sm font-medium rounded-md transition-all duration-200 block whitespace-nowrap',
                               'text-yellow-400 border border-yellow-400/30 bg-yellow-400/5 hover:bg-yellow-400/10'
                             )
                           }

@@ -49,6 +49,7 @@ const Proceedings = lazy(() => import("../pages/Proceedings"));
 const AISSDT = lazy(() => import("../pages/AISSDT"));
 const Conclave = lazy(() => import("../pages/Conclave"));
 const Brochure = lazy(() => import("../pages/Brochure"));
+const Circular = lazy(() => import("../pages/Circular"));
 const Contact = lazy(() => import("../pages/Contact"));
 const PaperSubmission = lazy(() => import("../pages/PaperSubmission"));
 const NotFound = lazy(() => import("../pages/NotFound"));
@@ -118,6 +119,7 @@ function AppRoutes() {
           <Route path="aissdt-2026" element={<AISSDT />} />
           <Route path="conclave" element={<Conclave />} />
           <Route path="brochure" element={<Brochure />} />
+          <Route path="circular" element={<Circular />} />
           <Route path="contact" element={<Contact />} />
           <Route path="paper-submission" element={<PaperSubmission />} />
         </Route>

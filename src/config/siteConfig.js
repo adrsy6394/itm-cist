@@ -109,6 +109,7 @@ export const NAV_LINKS = [
   { label: 'AISSDT-2026',            path: '/aissdt-2026' },
   { label: 'Conclave',               path: '/conclave' },
   { label: 'Brochure',               path: '/brochure' },
+  { label: 'Circular New',           path: '/circular' },
   { label: 'Contact',                path: '/contact' },
   { label: 'Online Paper Submission', path: '/paper-submission' },
 ]

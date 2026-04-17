@@ -13,40 +13,43 @@ export const CONVENER_MEMBERS = [
 ]
 
 
-// ── Organizing Committee (11 members) ─────────────────────────────────────────
+// ── Organizing Committee (13 members) ─────────────────────────────────────────
 export const ORGANIZING_MEMBERS = [
-  { id: 'oc1',  name: 'Dr. Ashutosh Kr. Rao',          imageSrc: '' },
-  { id: 'oc2',  name: 'Mrs. Deepti Ojha',                 imageSrc: '/committee/Dipti Ojha.jpeg' },
-  { id: 'oc3',  name: 'Mr. Vineet Kr. Rai',             imageSrc: '/committee/Vineet Sir.jpeg' },
-  { id: 'oc4',  name: 'Dr. Birendra Kr. Srivastava',                 imageSrc: '' },
-  { id: 'oc5',  name: 'Dr. Manoj Kr. Mishra',           imageSrc: '/committee/Manoj Sir.jpeg' },
-  { id: 'oc6',  name: 'Dr. Krishna Kumar',             imageSrc: '' },
-  { id: 'oc7',  name: 'Ms. Shalini Singh',                imageSrc: '/committee/shalini singh.jpeg' },
-  { id: 'oc8',  name: 'Dr. A. K. Sharma',            imageSrc: '' },
-  { id: 'oc9',  name: 'Ms. Shweta Singh',                 imageSrc: '' },
-  { id: 'oc10', name: 'Dr. R. K. Singh',           imageSrc: '/committee/R.K Singh.jpeg' },
+  { id: 'oc1',  name: 'Dr. Birendra Shrivastava', imageSrc: '' },
+  { id: 'oc2',  name: 'Dr. A. K. Sharma', imageSrc: '' },
+  { id: 'oc3',  name: 'Dr. R. K. Singh', imageSrc: '/committee/R.K Singh.jpeg' },
+  { id: 'oc4',  name: 'Dr. Surendra Kumar Roy', imageSrc: '' },
+  { id: 'oc5',  name: 'Dr. Krishna Kumar', imageSrc: '' },
+  { id: 'oc6',  name: 'Dr. A. R. Tripathi', imageSrc: '' },
+  { id: 'oc7',  name: 'Dr. Ashutosh Kumar Rao', imageSrc: '' },
+  { id: 'oc8',  name: 'Dr. Manoj Kumar Mishra', imageSrc: '/committee/Manoj Sir.jpeg' },
+  { id: 'oc9',  name: 'Mr. Vineet Kumar Rai', imageSrc: '/committee/Vineet Sir.jpeg' },
+  { id: 'oc10', name: 'Ms. Shalini Singh', imageSrc: '/committee/shalini singh.jpeg' },
+  { id: 'oc11', name: 'Ms. Shweta Singh', imageSrc: '' },
+  { id: 'oc12', name: 'Ms. Deepti Ojha', imageSrc: '/committee/Dipti Ojha.jpeg' },
+  { id: 'oc13', name: 'Dr. Nidhi Gupta', imageSrc: '' },
 ]
 
 // ── Technical Committee (18 members) ──────────────────────────────────────────
 export const TECHNICAL_MEMBERS = [
-  { id: 'tc1',  name: 'Dr. Surendra Kumar Roy',                     imageSrc: '' },
-  { id: 'tc2',  name: 'Dr. Nidhi Gupta',                      imageSrc: '' },
-  { id: 'tc3',  name: 'Mr. Vindhyachal Singh',                     imageSrc: '/committee/Vidhyachal Singh.jpeg' },
-  { id: 'tc4',  name: 'Mr. Abhraneel Sengupta',             imageSrc: '/committee/Abharneel Sengupta.jpeg' },
-  { id: 'tc5',  name: 'Ms. Shreya Chaudhary',        imageSrc: '/committee/Shreya Chaudhari.jpeg' },
-  { id: 'tc6',  name: 'Dr. Ayushi Priyadarshani',                    imageSrc: '' },
-  { id: 'tc7',  name: 'Dr. Jyoti Yadav',                  imageSrc: '/committee/Jyoti Yadav.jpeg' },
-  { id: 'tc8',  name: 'Ms. Nitika Singh',                   imageSrc: '' },
-  { id: 'tc9',  name: 'Mr. Devendra Mishra',                     imageSrc: '/committee/Devendra Mishra.jpeg' },
-  { id: 'tc10', name: 'Ms. Swati Singh Yadav',                         imageSrc: '/committee/Swati Singh Yadav.jpeg' },
-  { id: 'tc11', name: 'Ms. Pratibha Chaudhary',              imageSrc: '/committee/Abharneel Sengupta.jpeg' },
-  { id: 'tc12', name: 'Ms. Vartika Pandey',                      imageSrc: '/committee/Vertika Pandey.jpeg' },
-  { id: 'tc13', name: 'Mrs. Neha Chauhan',                      imageSrc: '/committee/Neha Chaudhari.jpeg' },
-   { id: 'tc14', name: 'Ms. Ankita Pandey',                      imageSrc: '' },
-   { id: 'tc15', name: 'Mr. Bidyasagar',                      imageSrc: '/committee/Vidya Sagar.jpeg' },
-   { id: 'tc16', name: 'Ms. Yasha Srivastava',                      imageSrc: '' },
-   { id: 'tc17', name: 'Ms. Shubhee',                      imageSrc: '' },
-   { id: 'tc18', name: 'Ms. Vartika Singh',                      imageSrc: '' },
+  { id: 'tc1',  name: 'Mr. Abhraneel Sengupta', imageSrc: '/committee/Abharneel Sengupta.jpeg' },
+  { id: 'tc2',  name: 'Ms. Nitika Singh', imageSrc: '' },
+  { id: 'tc3',  name: 'Mr. Vindhyachal Singh', imageSrc: '/committee/Vidhyachal Singh.jpeg' },
+  { id: 'tc4',  name: 'Ms. Shreya Chaudhary', imageSrc: '/committee/Shreya Chaudhari.jpeg' },
+  { id: 'tc5',  name: 'Mr. Bidyasagar', imageSrc: '/committee/Vidya Sagar.jpeg' },
+  { id: 'tc6',  name: 'Mr. Devendra Mishra', imageSrc: '/committee/Devendra Mishra.jpeg' },
+  { id: 'tc7',  name: 'Mr. Shubham Srivastava', imageSrc: '' },
+  { id: 'tc8',  name: 'Ms. Shubhee', imageSrc: '' },
+  { id: 'tc9',  name: 'Mr. Sanjay Kannaujjiya', imageSrc: '' },
+  { id: 'tc10', name: 'Ms. Yasha Srivastava', imageSrc: '' },
+  { id: 'tc11', name: 'Ms. Tripti Singh', imageSrc: '/committee/Tripti Singh.jpeg' },
+  { id: 'tc12', name: 'Ms. Vartika Singh', imageSrc: '' },
+  { id: 'tc13', name: 'Mr. Sarveshwar Shukla', imageSrc: '' },
+  { id: 'tc14', name: 'Mr. Alok Kumar Nishad', imageSrc: '' },
+  { id: 'tc15', name: 'Dr. Dhiraj Kumar', imageSrc: '' },
+  { id: 'tc16', name: 'Ms. Devanjali Prasad', imageSrc: '' },
+  { id: 'tc17', name: 'Dr. Jyoti Yadav', imageSrc: '/committee/Jyoti Yadav.jpeg' },
+  { id: 'tc18', name: 'Ms. Neha Chaudhary', imageSrc: '/committee/Neha Chaudhari.jpeg' },
 ]
 
 // ── Advisory Committee (37 members) ───────────────────────────────────────────
@@ -93,32 +96,35 @@ export const ADVISORY_MEMBERS = [
 
 // ── Media Handling Committee (3 members) ────────────────────────────────
 export const SOCIAL_MEDIA_MEMBERS = [
-  { id: 'sm1', name: 'Mr. Pradeep Kumar Chaudhary',                         imageSrc: '/committee/Pradeep Kumar Chaudhari.jpeg' },
-  { id: 'sm2', name: 'Mr. Shivkumar Yadav',                                 imageSrc: '/committee/shiv kumar yadav.jpeg' },
-  { id: 'sm3', name: 'Mr. Virendra Vikram Singh',                           imageSrc: '/committee/virendra vikram.jpeg' },
+  { id: 'sm1', name: 'Mr. Pradeep Kumar Chaudhary', imageSrc: '/committee/Pradeep Kumar Chaudhari.jpeg' },
+  { id: 'sm2', name: 'Mr. Shivkumar Yadav', imageSrc: '/committee/shiv kumar yadav.jpeg' },
+  { id: 'sm3', name: 'Mr. Virendra Vikram Singh', imageSrc: '/committee/virendra vikram.jpeg' },
 ]
 
-// ── Hospitality Committee (6 members) ─────────────────────────────────────────
+// ── Hospitality Committee (9 members) ─────────────────────────────────────────
 export const HOSPITALITY_MEMBERS = [
-  { id: 'hc1', name: 'Mr. Vikas Tripathi',                                 imageSrc: '' },
-  { id: 'hc2', name: 'Ms. Khusboo Yadav',                                 imageSrc: '/committee/Khosboo Yadav.jpeg' },
-  { id: 'hc3', name: 'Mr. Dev Sharan Yadav',                                imageSrc: '' },
-  { id: 'hc4', name: 'Mr. Shivam Kumar',                                    imageSrc: '' },
-  { id: 'hc5', name: 'Mr. Deenbandhu Kumar',                                imageSrc: '' },
-  { id: 'hc6', name: 'Ms. Tripti Singh',                                    imageSrc: '/committee/Tripti Singh.jpeg' },
+  { id: 'hc1', name: 'Mr. Nitin Dixit', imageSrc: '' },
+  { id: 'hc2', name: 'Mr. Vikas Tripathi', imageSrc: '' },
+  { id: 'hc3', name: 'Ms. Khusboo Yadav', imageSrc: '/committee/Khosboo Yadav.jpeg' },
+  { id: 'hc4', name: 'Mr. Dev Sharan Yadav', imageSrc: '' },
+  { id: 'hc5', name: 'Mr. Shivam Kumar', imageSrc: '' },
+  { id: 'hc6', name: 'Mr. Deenbandhu Kumar', imageSrc: '' },
+  { id: 'hc7', name: 'Mr. Rahul Kumar Maurya', imageSrc: '' },
+  { id: 'hc8', name: 'Ms. Saloni Shahi', imageSrc: '' },
+  { id: 'hc9', name: 'Ms. Aparna Gupta', imageSrc: '' },
 ]
 
 // ── Registration Committee (11 members) ───────────────────────────────────────
 export const REGISTRATION_MEMBERS = [
-  { id: 'rc1',  name: 'Mr. Ajai Gupta',                                     imageSrc: '' },
-  { id: 'rc2',  name: 'Mr. Kushal Srivastava',                              imageSrc: '/committee/kushal sir.png' },
-  { id: 'rc3',  name: 'Mr. Naveen',                               imageSrc: '' },
-  { id: 'rc4',  name: 'Mr. Umesh Chandra Gupta',                            imageSrc: '' },
-  { id: 'rc5',  name: 'Ms. Akanksha Gupta',                                 imageSrc: '' },
-  { id: 'rc6',  name: 'Mr. Diwakar Yadav',                                  imageSrc: '' },
-  { id: 'rc7',  name: 'Mr. Manish Chaudhary',                               imageSrc: '/committee/Manish.jpeg' },
-  { id: 'rc8',  name: 'Ms. Anjali Roy',                                     imageSrc: '' },
-  { id: 'rc9',  name: 'Dr. Dhiraj Kumar',                                   imageSrc: '' },
-  { id: 'rc10', name: 'Dr. Mazharuddin Ansari',                             imageSrc: '' },
-  { id: 'rc11', name: 'Mr. Sanjay Kannaujia',                                         imageSrc: '' },
+  { id: 'rc1',  name: 'Mr. Ajai Gupta', imageSrc: '' },
+  { id: 'rc2',  name: 'Mr. Kushal Srivastava', imageSrc: '/committee/kushal sir.png' },
+  { id: 'rc3',  name: 'Mr. Vibhanshu Tripathi', imageSrc: '' },
+  { id: 'rc4',  name: 'Mr. Umesh Chandra Gupta', imageSrc: '' },
+  { id: 'rc5',  name: 'Mr. Gaurav Rai', imageSrc: '' },
+  { id: 'rc6',  name: 'Mr. Diwakar Yadav', imageSrc: '' },
+  { id: 'rc7',  name: 'Dr. Mushtaq Ali Qureshi', imageSrc: '' },
+  { id: 'rc8',  name: 'Ms. Anjali Roy', imageSrc: '' },
+  { id: 'rc9',  name: 'Mr. Mazharuddin Ansari', imageSrc: '' },
+  { id: 'rc10', name: 'Mr. Prashant Kushwaha', imageSrc: '' },
+  { id: 'rc11', name: 'Mr. Naveen', imageSrc: '' },
 ]
