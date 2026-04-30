@@ -23,11 +23,11 @@ const BREADCRUMBS = [{ label: 'List of Speakers' }]
 const SPEAKERS_SHEET_URL = import.meta.env.VITE_SPEAKERS_SHEET_URL || ''
 
 function Speakers() {
-  const dispatch      = useDispatch()
+  const dispatch = useDispatch()
   const storeSpeakers = useSelector(selectSpeakers)
 
   const { data: sheetSpeakers, loading, error, refresh } = useFetchSheet(SPEAKERS_SHEET_URL, {
-    mapper:  mapSpeakers,
+    mapper: mapSpeakers,
     enabled: !!SPEAKERS_SHEET_URL,
   })
 
@@ -42,7 +42,7 @@ function Speakers() {
       : [...KEYNOTE_SPEAKERS, ...INVITED_SPEAKERS]
 
   const keynotes = allSpeakers.filter((s) => s.role?.toLowerCase().includes('keynote'))
-  const invited  = allSpeakers.filter((s) => !s.role?.toLowerCase().includes('keynote'))
+  const invited = allSpeakers.filter((s) => !s.role?.toLowerCase().includes('keynote'))
 
   return (
     <main>
@@ -52,17 +52,6 @@ function Speakers() {
         breadcrumbs={BREADCRUMBS}
       />
 
-      {/* ── No URL / Error notices ── */}
-      {!SPEAKERS_SHEET_URL && (
-        <div className="bg-blue-50 border-b border-blue-100">
-          <Container>
-            <div className="flex items-start gap-2 py-2.5 text-xs text-blue-700">
-              <AlertCircle size={13} className="shrink-0 mt-0.5 text-blue-400" />
-              Showing placeholder data. Set <code className="bg-blue-100 px-1 rounded">VITE_SPEAKERS_SHEET_URL</code> in .env to load live speaker data.
-            </div>
-          </Container>
-        </div>
-      )}
       {error && SPEAKERS_SHEET_URL && (
         <div className="bg-red-50 border-b border-red-100">
           <Container>
@@ -130,7 +119,7 @@ function Speakers() {
                         <img
                           src={speaker.imageSrc}
                           alt={`Photo of ${speaker.name}`}
-                          className="w-28 h-28 rounded-full object-cover border-2 border-slate-100"
+                          className="w-28 h-28 rounded-full object-contain border-2 border-slate-100 bg-white shadow-inner"
                           loading="lazy"
                         />
                       ) : (
@@ -142,16 +131,16 @@ function Speakers() {
                     {speaker.role && (
                       <Badge variant="info" className="mb-2 text-xs">{speaker.role}</Badge>
                     )}
-                    <h3 className="font-semibold text-navy text-base leading-snug mb-1">{speaker.name}</h3>
+                    <h3 className="font-semibold text-navy text-base leading-snug mb-1 text-center">{speaker.name}</h3>
                     {speaker.designation && (
-                      <p className="text-pro-blue text-xs font-medium mb-0.5">{speaker.designation}</p>
+                      <p className="text-pro-blue text-xs font-medium mb-0.5 text-center">{speaker.designation}</p>
                     )}
                     {speaker.affiliation && (
-                      <p className="text-slate-500 text-xs mb-3 leading-snug">{speaker.affiliation}</p>
+                      <p className="text-slate-500 text-xs mb-3 leading-snug text-center">{speaker.affiliation}</p>
                     )}
                     {speaker.topic && (
                       <div className="mt-auto pt-3 border-t border-slate-100 w-full">
-                        <p className="text-xs text-slate-400 italic leading-relaxed">
+                        <p className="text-xs text-slate-400 italic leading-relaxed text-center">
                           &ldquo;{speaker.topic}&rdquo;
                         </p>
                       </div>
