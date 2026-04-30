@@ -97,13 +97,6 @@ function ImportantDates() {
             )}
           </motion.div>
 
-          {/* Sheet URL notice */}
-          {!sheetUrl && (
-            <div className="flex items-start gap-2.5 bg-blue-50 border border-blue-200 rounded-md p-3 mb-5 text-xs text-blue-700">
-              <AlertCircle size={13} className="shrink-0 mt-0.5 text-blue-400" />
-              Showing placeholder data. Set VITE_IMPORTANT_DATES_SHEET_URL in your .env file.
-            </div>
-          )}
 
           {/* Fetch error banner */}
           {error && sheetUrl && (
@@ -175,11 +168,11 @@ function ImportantDates() {
 
           {/* ── Section 2: Registration Fee Table ── */}
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}>
-          <SectionHeader
-            title="Registration Fee"
-            subtitle="All fees are in Indian Rupees (INR) and inclusive of taxes."
-            className="mb-6"
-          />
+            <SectionHeader
+              title="Registration Fee"
+              subtitle="All fees are in Indian Rupees (INR) and inclusive of taxes."
+              className="mb-6"
+            />
           </motion.div>
 
           <div className="overflow-x-auto rounded-lg border border-slate-200 shadow-card mb-4">
